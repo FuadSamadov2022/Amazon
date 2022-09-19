@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="49.352">
+<testcase classname="Add EGift card to the Cart" name="Search and Add E-Gift Card with amount:100 to the cart" time="18.178">
+<system-out><![CDATA[Given User Navigates to "Amazon" application................................passed
+And User verifies page title contains "Amazon.com"..........................passed
+When User enters search request "electronic gift card" in the Search Bar....passed
+And User verifies page title contains "Electronic Gift Card"................passed
+Then User select and click on "Starbucks Gift Cards - Email Delivery" item..passed
+And User verifies page title contains "Starbucks"...........................passed
+Then User selects "Fall Thank You" card design..............................passed
+Then User select amount:"100", enters To:"fuad@gmail.com", From:"Fuad", Message:"HB!", Quantity:"1" on the Gift Card Details.passed
+And User select month:"October", date:"31", year:"2022" on the Gift Card Details.passed
+And User Validates Quantity:"1" and Cart Subtotal value:"$100.00"...........passed
+And User click Add to card button...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add EGift card to the Cart" name="Search and Add E-Gift Card with amount:150 to the cart" time="15.41">
+<system-out><![CDATA[Given User Navigates to "Amazon" application................................passed
+And User verifies page title contains "Amazon.com"..........................passed
+When User enters search request "electronic gift card" in the Search Bar....passed
+And User verifies page title contains "Electronic Gift Card"................passed
+Then User select and click on "Starbucks Gift Cards - Email Delivery" item..passed
+And User verifies page title contains "Starbucks"...........................passed
+Then User selects "Fall Thank You" card design..............................passed
+Then User select amount:"150", enters To:"fuad@gmail.com", From:"Fuad", Message:"HB!", Quantity:"1" on the Gift Card Details.passed
+And User select month:"October", date:"31", year:"2022" on the Gift Card Details.passed
+And User Validates Quantity:"1" and Cart Subtotal value:"$150.00"...........passed
+And User click Add to card button...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add EGift card to the Cart" name="Search and Add E-Gift Card with amount:50 to the cart" time="15.45">
+<system-out><![CDATA[Given User Navigates to "Amazon" application................................passed
+And User verifies page title contains "Amazon.com"..........................passed
+When User enters search request "electronic gift card" in the Search Bar....passed
+And User verifies page title contains "Electronic Gift Card"................passed
+Then User select and click on "Starbucks Gift Cards - Email Delivery" item..passed
+And User verifies page title contains "Starbucks"...........................passed
+Then User selects "Fall Thank You" card design..............................passed
+Then User select amount:"50", enters To:"fuad@gmail.com", From:"Fuad", Message:"HB!", Quantity:"1" on the Gift Card Details.passed
+And User select month:"October", date:"31", year:"2022" on the Gift Card Details.passed
+And User Validates Quantity:"1" and Cart Subtotal value:"$50.00"............passed
+And User click Add to card button...........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
