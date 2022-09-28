@@ -7,11 +7,13 @@ public class Pages {
     private WebUtils webUtils;
     private SearchBarPage searchBarPage;
     private EGiftCardPage eGiftCardPage;
+    private APIResponse apiResponse;
 
     public Pages() {
         this.searchBarPage = new SearchBarPage();
         this.webUtils = new WebUtils();
         this.eGiftCardPage = new EGiftCardPage();
+        this.apiResponse = new APIResponse();
     }
 
     public WebUtils webUtils() {
@@ -26,4 +28,7 @@ public class Pages {
         return eGiftCardPage;
     }
 
+    public APIResponse apiResponse() {
+        return apiResponse;
+    }
 }

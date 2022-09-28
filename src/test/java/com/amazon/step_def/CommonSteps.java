@@ -8,7 +8,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 
-import static com.amazon.step_def.Hooks.DEFAULT_TIMEOUT;
 
 public class CommonSteps extends BaseStep {
 

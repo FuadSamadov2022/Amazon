@@ -6,6 +6,7 @@ import com.amazon.utils.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.restassured.response.Response;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -15,12 +16,12 @@ import java.time.Duration;
 
 public class Hooks extends BaseStep{
 
-    private final static Logger testLogger = LogManager.getLogger(ConfigurationReader.class.getSimpleName());
+    private final static Logger testLogger = LogManager.getLogger(Hooks.class.getSimpleName());
     public final static int DEFAULT_TIMEOUT = 10;
 
-    @Before(order = 1)
+    @Before(order = 1, value = "@ui")
     public void setUpScenario(Scenario scenario) {
-        testLogger.info("Started execution test Scenario - " + scenario.getName());
+        testLogger.info("Started execution UI test Scenario - " + scenario.getName());
         String browser = System.getProperty("browser") != null ? System.getProperty("browser") : ConfigurationReader.get("browser");
 
         if (!browser.contains("remote")) {
@@ -29,7 +30,7 @@ public class Hooks extends BaseStep{
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(DEFAULT_TIMEOUT));
     }
 
-    @After(order = 1)
+    @After(order = 1, value = "@ui")
     public void tearDownScenario(Scenario scenario) {
         testLogger.info("Finished execution test Scenario - " + scenario.getName());
         testLogger.info("Scenario status - " + scenario.getStatus().toString());
@@ -47,6 +48,12 @@ public class Hooks extends BaseStep{
         testLogger.info("Driver closed");
         testLogger.info("------------------------- After hook ends -------------------------");
         testLogger.info("-------------------------------------------------------------------");
+    }
+
+    @Before (order = 0, value = "@api")
+    public void setupAPI(Scenario scenario){
+        testLogger.info("Started execution API test Scenario - " + scenario.getName());
+        testLogger.info("Environment: " + ConfigurationReader.get("env"));
     }
 
 }
